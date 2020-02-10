@@ -23,7 +23,7 @@ extension Future where T: SQLQueryFetcher {
     ///
     ///     builder.first(decoding: Planet.self, Galaxy.self)
     ///
-    public func first<A, B>(decoding a: A.Type, _ b: B.Type) -> Future<(A, B)?> where A : SQLTable, B : SQLTable {
+    public func first<A, B>(decoding a: A.Type, _ b: B.Type) -> Future<(A, B)?> where A : Decodable, B : Decodable {
         return flatMap { $0.first(decoding: A.self, B.self) }
     }
     
@@ -31,7 +31,7 @@ extension Future where T: SQLQueryFetcher {
     ///
     ///     builder.first(decoding: Planet.self, Galaxy.self, SolarSystem.self)
     ///
-    public func first<A, B, C>(decoding a: A.Type, _ b: B.Type, _ c: C.Type) -> Future<(A, B, C)?> where A : SQLTable, B : SQLTable, C : SQLTable {
+    public func first<A, B, C>(decoding a: A.Type, _ b: B.Type, _ c: C.Type) -> Future<(A, B, C)?> where A : Decodable, B : Decodable, C : Decodable {
         return flatMap { $0.first(decoding: A.self, B.self, C.self) }
     }
     

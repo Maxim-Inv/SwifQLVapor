@@ -13,7 +13,7 @@ let package = Package(
         ],
         dependencies: [
         .package(url: "https://github.com/MihaelIsaev/SwifQL.git", from: "2.0.0-beta"),
-        .package(url: "https://github.com/MihaelIsaev/SwifQLNIO.git", from:"2.0.0"),
+        .package(url: "https://github.com/Maxim-Inv/SwifQLNIO.git", .branch("master"),
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0-rc"),
         .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0-rc"),
         .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0-rc"),
